@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.8em;
+        }
+
+     
+        .hero {
+            padding: 50px;
+            text-align: center;
+            max-width: 1500px;
+            margin: 0 auto;
+            overflow: hidden; 
+        }
+
+        .hero h1 {
+            font-size: 8em;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .image-row {
+            display: flex;
+            padding-left: 10%; 
+            animation: scrollImages 30s linear infinite; 
+            width: fit-content; 
+        }
+
+        .image-placeholder {
+            width: 200px;
+            height: 300px;
+            border-radius: 20px;
+            background-color: #333;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; 
+            flex-shrink: 0; 
+            transition: transform 0.3s ease; 
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-placeholder:hover {
+          transform: scale(1.1); 
+          z-index: 1; 
+        }
+
+        .circle-button {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          background-color: green;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          font-size: 0.9em;
+          flex-shrink: 0; 
+          margin: 10px;
+          transition: transform 0.3s ease; 
+        }
+
+        .circle-button:hover {
+          transform: scale(1.1);
+          z-index: 1; 
+        }
+
+        .text-row {
+          display: flex;
+          justify-content: space-around;
+          text-align: center; 
+        }
+
+        .text-box {
+          background-color: #111; 
+          padding: 20px; 
+          width: 25%; 
+          border-radius: 10px; 
+          font-size: 0.85em; 
+        }
+
+      
+        .bottom-section {
+          padding: 50px; 
+          text-align: center; 
+          max-width: 800px; 
+          margin: 0 auto; 
+        }
+
+        .bottom-section p {
+          font-style: italic; 
+          margin-bottom: 30px; 
+          font-size: 0.9em; 
+        }
+
+        .bottom-section h2 {
+          font-size: 2em; 
+        }
+
+
+        @keyframes scrollImages {
+          0% {
+              transform: translateX(0);
+          }
+          100% {
+              transform: translateX(-100%); 
+          }
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>Elegant</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">New Collection</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li>
+                    <a href="#">🛒</a>
+                  </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Elegant</h1>
+
+        <div class="image-row">
+            <div class="image-placeholder">
+                <img src="h1.jpg" alt="Image 1">
+            </div>
+            <div class="image-placeholder">
+                <img src="h2.jpg" alt="Image 2">
+            </div>
+            <a href="#" class="circle-button">See Catalog</a>
+            <div class="image-placeholder">
+                <a href="dress.html" target="_blank">
+    <img src="L:\hackathon\work\blackdress.jpg" alt="Black Dress">
+</a>
+
+            </div>
+            <div class="image-placeholder">
+                 <img src="h7.jpg" alt="Image 4">
+             </div>
+             <!-- Repeat images to ensure continuous scroll -->
+             <div class="image-placeholder">
+                <img src="h5.jpg" alt="Image 1">
+             </div>
+             <div class="image-placeholder">
+                <img src="h6.jpg" alt="Image 2">
+             </div>
+             <a href="#" class="circle-button">See Catalog</a>
+             <div class="image-placeholder">
+                <img src="c.jpg" alt="Image 3">
+             </div>
+             <div class="image-placeholder">
+                 <img src="h8.jpg" alt="Image 4">
+             </div>
+         </div>
+
+         <div class="text-row">
+             <div class="text-box">Here you will find everything you need. Our collection is constantly expanding to suit your unique style.</div>
+             <div class="text-box">The women's clothing in our new collection is both comfortable and stylish, ideal for both casual days and special occasions, all at affordable prices.</div>
+             <div class="text-box">Explore New Collection ></div>
+         </div>
+     </section>
+
+     <section class="bottom-section">
+         <p>At Elegant, we believe that fashion is an art form — one that should reflect individuality, confidence, and timeless beauty. Our journey began with a simple idea to create clothing that not only fits your body but also complements your spirit.</p>
+         <h2>We have already more than 12k clients</h2>
+     </section>
+
+</body>
+</html>

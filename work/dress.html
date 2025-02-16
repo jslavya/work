@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color:rgb(0, 1, 0);
+            color: rgb(0,45,2);
+        }
+
+        .container {
+            width: 375px;
+            /* iPhone SE width */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .back-arrow {
+            font-size: 1.5em;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .header-right {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .product-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .image-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .image-dot.active {
+            background-color: #000;
+        }
+
+        .product-details {
+            padding: 10px 0;
+        }
+
+        .product-name {
+            font-size: 1.7em;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .color-selector {
+            margin-bottom: 15px;
+        }
+
+        .color-label {
+            font-size: 0.9em;
+            color: #555;
+            margin-right: 5px;
+        }
+
+        .color-options {
+            display: flex;
+            align-items: center;
+        }
+
+        .color-circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .color-circle.champagne {
+            background-color:rgb(0, 0, 0);
+        }
+
+        .color-circle.selected {
+            border: 2px solid rgb(227, 206, 206);
+        }
+
+        .size-selector {
+            margin-bottom: 15px;
+        }
+
+        .size-label {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 8px;
+        }
+
+        .size-button {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            background-color: #f9f9f9;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .size-button:hover {
+            background-color: #eee;
+        }
+
+        .size-link {
+            font-size: 0.8em;
+            color:rgb(1, 45, 5);
+            text-decoration: none;
+        }
+
+        .add-to-cart-section {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .add-to-cart-button {
+            background-color: #000;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #111;
+        }
+
+        .wishlist-button {
+            background-color: #000;
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 8px;
+        }
+
+        .wishlist-button:hover {
+            background-color: #111;
+        }
+
+        .link-button {
+            display: block;
+            text-align: left;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .link-button:hover {
+            background-color:rgb(34, 108, 2);
+        }
+
+        .time {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <span class="back-arrow">&larr;</span>
+            </div>
+            <div class="logo">ELEGANT</div>
+            <div class="header-right">&#894;</div>
+        </div>
+
+        <div class="product-image">
+            <img src="L:\hackathon\rashil\blackdress.jpg" alt="Product Image" id="productImage">
+            <div class="image-dots">
+                <div class="image-dot active" data-index="0"></div>
+                <div class="image-dot" data-index="1"></div>
+                <div class="image-dot" data-index="2"></div>
+                <!-- Add more dots as needed -->
+            </div>
+        </div>
+
+        <div class="product-details">
+            <h1 class="product-name">GUCCI BLACK DRESS</h1>
+            <p class="product-price">$6100.00</p>
+
+            <div class="color-selector">
+                <div class="color-label">COLOR:Black White</div>
+                <div class="color-options">
+                    <div class="color-circle champagne selected"></div>
+                    <div class="color-circle"></div>
+                </div>
+            </div>
+
+            <div class="size-selector">
+                <div class="size-label">SIZE</div>
+                <div class="size-options">
+                    <button class="size-button">XS</button>
+                    <button class="size-button">S</button>
+                    <button class="size-button">M</button>
+                    <button class="size-button">L</button>
+                    <button class="size-button">XL</button>
+                    <button class="size-button">XXL</button>
+                </div>
+                <a href="#" class="size-link">WHAT'S MY SIZE?</a>
+            </div>
+
+            <div class="add-to-cart-section">
+                <button class="add-to-cart-button">+ Add to Cart</button>
+                <button class="wishlist-button">&#9825;</button>
+            </div>
+
+            <a href="#" class="link-button">Find in Store ></a>
+            <a href="#" class="link-button">Product Details ></a>
+            <a href="#" class="link-button">Shipping and Returns ></a>
+        </div>
+    </div>
+</body>
+
+</html>
